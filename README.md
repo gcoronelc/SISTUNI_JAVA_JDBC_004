@@ -4,7 +4,7 @@
 
 - Lugar: SistemasUNI
 - Horario: SABADOS de 3 pm a 9 pm
-- Inicio: 21-MAYO-2016
+- Inicio: 28-MAYO-2016
 - Dirección: https://goo.gl/maps/98vwAt9NZMU2
 - Contenido: http://www.sistemasuni.edu.pe/dcursos/javaescritorio.html
 - Página: http://gcoronelc.github.io/SISTUNI_JAVA_JDBC_004/
@@ -34,7 +34,7 @@
 
 # CLASE 01 
 
-- Fecha: 06-MARZO-2016
+- Fecha: 28-MAYO-2016
 - Revisado Git y GitHub
 - Instalar Oracle
 - Crear esquema Eureka
