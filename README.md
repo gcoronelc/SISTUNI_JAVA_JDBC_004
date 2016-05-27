@@ -1,4 +1,4 @@
-![Java CLIENTE-SERVIDOR](https://raw.githubusercontent.com/gcoronelc/SISTUNI_JAVA_JDBC_004/master/JavaJDBC004.png)
+![Java CLIENTE-SERVIDOR](https://raw.githubusercontent.com/gcoronelc/SISTUNI_JAVA_JDBC_004/master/JavaCS004.png)
 
 # DESARROLLADOR DE APLICACIONES DE ESCRITORIO
 
