@@ -37,9 +37,23 @@
 - Fecha: 28-MAYO-2016
 - Revisado Git y GitHub
 - Instalar Oracle
+- Revisar conceptos de Oracle
+- Creación de esquema
+- Conexión remota
+
+# CLASE 02
+
+- Fecha: 11-JUN-2016
 - Crear esquema Eureka
-- Conexión NetBeans - Oracle
 - API JDBC
+- Registrando el driver en NetBeans
+- Conexión NetBeans - Oracle
+- Crear clase AccesoDB.java
+- Probar conexión
+- Ejecutar sentencias sin parámetros con Statement
+- Probar el SQL Injection
+- Ejecutar sentencias con parametros con PreparedStatement
+
 
 
 
