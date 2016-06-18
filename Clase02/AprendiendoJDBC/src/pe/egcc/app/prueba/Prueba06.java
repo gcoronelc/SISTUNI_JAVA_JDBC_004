@@ -2,9 +2,8 @@ package pe.egcc.app.prueba;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.Types;
+import oracle.jdbc.oracore.OracleType;
 import pe.egcc.app.db.AccesoDB;
 
 /**
@@ -15,7 +14,7 @@ public class Prueba06 {
 
   public static void main(String[] args) {
     Connection cn = null;
-    double saldo;
+    Double saldo = null;
     try {
       cn = AccesoDB.getConnection();
       
@@ -24,9 +23,12 @@ public class Prueba06 {
       String sql = "{call usp_egcc_saldo_cuenta(?,?)}";
       CallableStatement cstm = cn.prepareCall(sql);
       cstm.setString(1, "00200011");
-      cstm.registerOutParameter(2, Types.NUMERIC);
+      cstm.registerOutParameter(2, Types.VARCHAR);
       cstm.executeUpdate();
-      saldo = cstm.getDouble(2);
+      String n = cstm.getString(2);
+      if( n != null){
+        saldo = Double.parseDouble(n);
+      }
       cstm.close();
       System.out.println("Saldo: " + saldo);
     } catch (Exception e) {
