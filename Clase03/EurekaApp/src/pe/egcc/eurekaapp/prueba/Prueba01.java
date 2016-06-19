@@ -2,6 +2,7 @@ package pe.egcc.eurekaapp.prueba;
 
 import pe.egcc.eurekaapp.domain.Empleado;
 import pe.egcc.eurekaapp.service.LogonService;
+import pe.egcc.eurekaapp.util.Memoria;
 
 /**
  *
@@ -9,7 +10,7 @@ import pe.egcc.eurekaapp.service.LogonService;
  */
 public class Prueba01 {
 
-  public static void main(String[] args) {
+  public static void main(String[] args) {   
     LogonService service = new LogonService();
     Empleado bean = service.validar("cromero", "chicho");
     if(bean != null){
