@@ -1,7 +1,9 @@
 package pe.egcc.eurekaapp.controller;
 
 import java.util.Map;
+import pe.egcc.eurekaapp.domain.Empleado;
 import pe.egcc.eurekaapp.service.CuentaService;
+import pe.egcc.eurekaapp.util.Memoria;
 
 /**
  *
@@ -9,7 +11,7 @@ import pe.egcc.eurekaapp.service.CuentaService;
  */
 public class CuentaController {
 
-  private CuentaService cuentaService;
+  private final CuentaService cuentaService;
 
   public CuentaController() {
     cuentaService = new CuentaService();
@@ -25,8 +27,8 @@ public class CuentaController {
   }
   
   public void procDeposito(String cuenta, double importe){
-    
-    
-    
+    Empleado usuario = (Empleado) Memoria.get("usuario");
+    cuentaService.procDeposito(cuenta,importe,usuario.getCodigo());
   }
+  
 }
