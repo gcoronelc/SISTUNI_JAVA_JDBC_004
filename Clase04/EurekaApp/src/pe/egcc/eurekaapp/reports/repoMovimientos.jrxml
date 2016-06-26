@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="REPORTE DE MOVIMIENTOS" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2431a906-88bd-4c0e-bca5-b2824faddcec">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="CUENTA" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select 
+CUENCODIGO,
+MONENOMBRE,
+CUENSALDO,
+CUENESTADO,
+MOVINUMERO,
+MOVIFECHA,
+MOVIIMPORTE,
+TIPOCODIGO,
+TIPONOMBRE
+from v_movimiento
+where CUENCODIGO=$P{CUENTA}
+ORDER BY MOVINUMERO]]>
+	</queryString>
+	<field name="CUENCODIGO" class="java.lang.String"/>
+	<field name="MONENOMBRE" class="java.lang.String"/>
+	<field name="CUENSALDO" class="java.math.BigDecimal"/>
+	<field name="CUENESTADO" class="java.lang.String"/>
+	<field name="MOVINUMERO" class="java.math.BigDecimal"/>
+	<field name="MOVIFECHA" class="java.sql.Timestamp"/>
+	<field name="MOVIIMPORTE" class="java.math.BigDecimal"/>
+	<field name="TIPOCODIGO" class="java.lang.String"/>
+	<field name="TIPONOMBRE" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="269" height="33" uuid="6d488ea3-405b-435c-b749-34ffa5eadfc9"/>
+				<textElement>
+					<font size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[EUREKABANK]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="81" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20" forecolor="#003366" uuid="44be231b-97f5-4e07-8403-1e2999dd830e"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LISTA DE MOVIMIENTOS]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="30" width="100" height="20" uuid="0f43edde-eb40-4fe2-81fe-da47058464bc"/>
+				<textFieldExpression><![CDATA[$F{CUENCODIGO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="30" width="100" height="20" uuid="0dbe4dc0-8e2e-412a-8147-88a8b5f23732"/>
+				<text><![CDATA[CUENTA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="269" y="30" width="100" height="20" uuid="e92a9a0d-7cd0-4e73-ad5b-5929203b2d9f"/>
+				<text><![CDATA[MONEDA:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="369" y="30" width="100" height="20" uuid="b251e2c6-7bca-4a75-ac48-b366067dc3f5"/>
+				<textFieldExpression><![CDATA[$F{MONENOMBRE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="50" width="100" height="20" uuid="307e3f0b-4c88-450b-9929-c6ed2aa51d58"/>
+				<text><![CDATA[ESTADO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="100" y="50" width="100" height="20" uuid="e684c354-0b75-4d08-abd1-b485f641ebcb"/>
+				<textFieldExpression><![CDATA[$F{CUENESTADO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="269" y="50" width="100" height="20" uuid="884629a8-2421-4285-bac9-0829db1f819a"/>
+				<text><![CDATA[SALDO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="369" y="50" width="100" height="20" uuid="5ee4fee4-9dc6-4370-b82a-a898c1ac789c"/>
+				<textFieldExpression><![CDATA[$F{CUENSALDO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="111" height="20" uuid="2619b002-2fe7-4607-b5c1-d57e7a0b1bf1"/>
+				<text><![CDATA[MOVINUMERO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="0" width="111" height="20" uuid="e2a3c73d-7bf1-4bea-94c0-2f9696423116"/>
+				<text><![CDATA[MOVIFECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="0" width="111" height="20" uuid="7d9338d6-3f20-41a0-b11b-276261dc87c9"/>
+				<text><![CDATA[TIPOCODIGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="0" width="111" height="20" uuid="e2fc642c-a0c0-4134-b60a-df0ea2a804d6"/>
+				<text><![CDATA[TIPONOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="0" width="111" height="20" uuid="b9e6e8b1-83d9-4f19-9509-342f17d06bb5"/>
+				<text><![CDATA[MOVIIMPORTE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="29" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="111" height="20" uuid="09323975-fb5e-4ee6-8931-802e416bb323"/>
+				<textFieldExpression><![CDATA[$F{MOVINUMERO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="0" width="111" height="20" uuid="60c93c74-69d6-49ca-b080-cc0b8fe83a50"/>
+				<textFieldExpression><![CDATA[$F{MOVIFECHA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="0" width="111" height="20" uuid="44700138-f279-4360-88db-c52483692c51"/>
+				<textFieldExpression><![CDATA[$F{TIPOCODIGO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="0" width="111" height="20" uuid="b20d2f9d-27d7-42f8-9634-515fc924aa62"/>
+				<textFieldExpression><![CDATA[$F{TIPONOMBRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="0" width="111" height="20" uuid="1c218932-30c8-4a17-9beb-174364ec6580"/>
+				<textFieldExpression><![CDATA[$F{MOVIIMPORTE}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

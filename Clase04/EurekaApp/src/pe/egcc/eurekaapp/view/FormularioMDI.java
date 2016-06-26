@@ -41,6 +41,7 @@ public class FormularioMDI extends javax.swing.JFrame {
     menuConsultas = new javax.swing.JMenu();
     menuConsultasSaldoCuenta = new javax.swing.JMenuItem();
     menuReportes = new javax.swing.JMenu();
+    menuReportesMovimientos = new javax.swing.JMenuItem();
     menuUtil = new javax.swing.JMenu();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -95,6 +96,15 @@ public class FormularioMDI extends javax.swing.JFrame {
     menuBar.add(menuConsultas);
 
     menuReportes.setText("Reportes");
+
+    menuReportesMovimientos.setText("Movimientos");
+    menuReportesMovimientos.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        menuReportesMovimientosActionPerformed(evt);
+      }
+    });
+    menuReportes.add(menuReportesMovimientos);
+
     menuBar.add(menuReportes);
 
     menuUtil.setText("Util");
@@ -131,6 +141,10 @@ public class FormularioMDI extends javax.swing.JFrame {
   private void menuProcesosDepósitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuProcesosDepósitoActionPerformed
     cargarFormulario(DepositoView.class);
   }//GEN-LAST:event_menuProcesosDepósitoActionPerformed
+
+  private void menuReportesMovimientosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuReportesMovimientosActionPerformed
+    cargarFormulario(RepoMovimientosView.class);
+  }//GEN-LAST:event_menuReportesMovimientosActionPerformed
 
   /**
    * @param args the command line arguments
@@ -177,6 +191,7 @@ public class FormularioMDI extends javax.swing.JFrame {
   private javax.swing.JMenu menuProcesos;
   private javax.swing.JMenuItem menuProcesosDepósito;
   private javax.swing.JMenu menuReportes;
+  private javax.swing.JMenuItem menuReportesMovimientos;
   private javax.swing.JMenu menuTablas;
   private javax.swing.JMenuItem menuTablasClientes;
   private javax.swing.JMenu menuUtil;
